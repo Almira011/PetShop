@@ -2,32 +2,57 @@
 {% load static %}
 
 {% block title %}{{ product.name }}{% endblock %}
+
 {% block css %}
 <link rel="stylesheet" href="{% static 'css/product_details.css' %}">
 {% endblock %}
 
-<div class="auth-container">
-
 {% block content %}
-<h2>{{ product.name }}</h2>
+<div class="product-container">
 
-{% if product.image %}
-    <img src="{{ product.image.url }}" width="300">
-{% endif %}
+    <div class="product-card">
 
-<p><strong>Region:</strong> {{ product.region }}</p>
-<p><strong>Age:</strong> {{ product.age }}</p>
-<p><strong>Vaccinated:</strong> {{ product.vaccinated }}</p>
-<p><strong>Sterilized:</strong> {{ product.sterilized }}</p>
-<p><strong>Features:</strong> {{ product.features }}</p>
-<p><strong>Shelter:</strong> {{ product.shelter }}</p>
-<p><strong>Phone:</strong> {{ product.phone }}</p>
-<p><strong>Price:</strong> {{ product.price }}</p>
-<p><strong>Info:</strong> {{ product.info }}</p>
+        <div class="product-image">
+            {% if product.image %}
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            {% else %}
+                <img src="{% static 'images/no-image.png' %}" alt="No image available">
+            {% endif %}
+        </div>
 
-{% if user.is_authenticated %}
-    <a href="{% url 'create_order' product.id %}">Adopt / Buy</a>
-{% else %}
-    <p><a href="{% url 'login' %}">Login</a> to order</p>
-{% endif %}
+        <div class="product-info">
+            <h2 class="product-title">{{ product.name }}</h2>
+
+            <ul class="product-details">
+                <li><span>Region:</span> {{ product.region }}</li>
+                <li><span>Age:</span> {{ product.age }}</li>
+                <li><span>Vaccinated:</span> {{ product.vaccinated }}</li>
+                <li><span>Sterilized:</span> {{ product.sterilized }}</li>
+                <li><span>Features:</span> {{ product.features }}</li>
+                <li><span>Shelter:</span> {{ product.shelter }}</li>
+                <li><span>Phone:</span> {{ product.phone }}</li>
+                <li><span>Price:</span> {{ product.price }}</li>
+            </ul>
+
+            <div class="product-description">
+                <h4>Additional Information</h4>
+                <p>{{ product.info }}</p>
+            </div>
+
+            <div class="product-actions">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'create_order' product.id %}" class="btn-primary">
+                        Adopt / Buy
+                    </a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="btn-secondary">
+                        Login to order
+                    </a>
+                {% endif %}
+            </div>
+
+        </div>
+
+    </div>
+</div>
 {% endblock %}
