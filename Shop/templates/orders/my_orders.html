@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}My Orders{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/my_order.css' %}">
+{% endblock %}
+
+<div class="auth-container">
+
+
+{% block content %}
+<div class="order-box">
+
+<h2>My Orders</h2>
+
+<ul>
+    {% for order in orders %}
+        <li>
+            Order #{{ order.id }} - {{ order.total_amount }}
+            <a href="{% url 'order_detail' order.id %}">View</a>
+        </li>
+    {% empty %}
+        <p>No orders found.</p>
+    {% endfor %}
+</ul>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Order {{ order.id }}{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/ordersdetails.css' %}">
+{% endblock %}
+
+<div class="auth-container">
+
+
+
+{% block content %}
+<h2>Order #{{ order.id }}</h2>
+
+<p><strong>Date:</strong> {{ order.order_date }}</p>
+<p><strong>Total:</strong> {{ order.total_amount }}</p>
+
+<h3>Products</h3>
+
+<ul>
+    {% for item in order_products %}
+        <li>
+            {{ item.product.name }} – {{ item.product.price }}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Profile{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+<div class="auth-container">
+
+{% block content %}
+<div class="profile-box">
+
+<h2>My Profile</h2>
+
+<p><strong>Name:</strong> {{ customer.name }}</p>
+<p><strong>Email:</strong> {{ customer.email }}</p>
+<p><strong>Phone:</strong> {{ customer.phone_number }}</p>
+<p><strong>Address:</strong> {{ customer.address }}</p>
+
+<h3>My Orders</h3>
+
+<ul>
+    {% for order in orders %}
+        <li>
+            Order #{{ order.id }} |
+            {{ order.order_date }} |
+            {{ order.total_amount }}
+            <a href="{% url 'order_detail' order.id %}">View</a>
+        </li>
+    {% empty %}
+        <p>No orders yet.</p>
+    {% endfor %}
+</ul>
+</div>
+{% endblock %}

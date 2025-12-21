@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ product.name }}{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/product_details.css' %}">
+{% endblock %}
+
+<div class="auth-container">
+
+{% block content %}
+<h2>{{ product.name }}</h2>
+
+{% if product.image %}
+    <img src="{{ product.image.url }}" width="300">
+{% endif %}
+
+<p><strong>Region:</strong> {{ product.region }}</p>
+<p><strong>Age:</strong> {{ product.age }}</p>
+<p><strong>Vaccinated:</strong> {{ product.vaccinated }}</p>
+<p><strong>Sterilized:</strong> {{ product.sterilized }}</p>
+<p><strong>Features:</strong> {{ product.features }}</p>
+<p><strong>Shelter:</strong> {{ product.shelter }}</p>
+<p><strong>Phone:</strong> {{ product.phone }}</p>
+<p><strong>Price:</strong> {{ product.price }}</p>
+<p><strong>Info:</strong> {{ product.info }}</p>
+
+{% if user.is_authenticated %}
+    <a href="{% url 'create_order' product.id %}">Adopt / Buy</a>
+{% else %}
+    <p><a href="{% url 'login' %}">Login</a> to order</p>
+{% endif %}
+{% endblock %}
