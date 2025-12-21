@@ -1,92 +1,99 @@
-/* =========================
-   Auth Page Container
-   ========================= */
-.auth-container {
+/* Page layout */
+.login-container {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #f5f7fa;
+}
+
+/* Card */
+.login-card {
+    width: 100%;
     max-width: 420px;
-    margin: 60px auto;
-    padding: 32px;
     background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
-/* =========================
-   Heading
-   ========================= */
-.auth-container h2 {
+/* Title */
+.login-title {
     text-align: center;
+    margin-bottom: 25px;
     font-size: 26px;
-    font-weight: 600;
-    margin-bottom: 24px;
-    color: #0f172a;
+    color: #333;
 }
 
-/* =========================
-   Form Layout
-   ========================= */
-.auth-container form {
+/* Form */
+.login-form .form-group {
     display: flex;
     flex-direction: column;
+    margin-bottom: 18px;
 }
 
-/* Django form.as_p styling */
-.auth-container form p {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 16px;
-}
-
-/* Labels */
-.auth-container label {
-    font-size: 14px;
-    font-weight: 500;
+.login-form label {
     margin-bottom: 6px;
-    color: #334155;
-}
-
-/* Inputs */
-.auth-container input {
-    padding: 10px 12px;
-    border-radius: 6px;
-    border: 1px solid #cbd5f5;
-    font-size: 14px;
-    transition: border-color 0.2s ease;
-}
-
-.auth-container input:focus {
-    outline: none;
-    border-color: #2563eb;
-}
-
-/* =========================
-   Submit Button
-   ========================= */
-.auth-container button {
-    margin-top: 10px;
-    padding: 11px;
-    font-size: 15px;
     font-weight: 600;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    background-color: #2563eb;
-    color: #ffffff;
-    transition: background-color 0.2s ease;
-}
-
-.auth-container button:hover {
-    background-color: #1e40af;
-}
-
-/* =========================
-   Footer Text
-   ========================= */
-.auth-container p:last-child {
-    text-align: center;
-    margin-top: 18px;
     font-size: 14px;
+    color: #555;
 }
 
-.auth-container a {
-    font-weight: 500;
+.login-form input {
+    padding: 10px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.15);
+}
+
+/* Button */
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #43a047;
+}
+
+/* Signup link */
+.signup-link {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+.signup-link a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-card {
+        padding: 20px;
+    }
 }
