@@ -1,89 +1,94 @@
-/* =========================
-   Order Detail Container
-   ========================= */
-.order-detail-box {
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 32px;
+/* Page background */
+.order-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #f5f7fa;
+}
+
+/* Card */
+.order-card {
+    width: 100%;
     max-width: 700px;
-    margin: 40px auto;
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
-/* =========================
-   Headings
-   ========================= */
-.order-detail-box h2 {
-    font-size: 28px;
-    font-weight: 600;
+/* Title */
+.order-title {
+    font-size: 26px;
     margin-bottom: 20px;
-    color: #0f172a;
+    color: #333;
 }
 
-.order-detail-box h3 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-top: 28px;
-    margin-bottom: 14px;
-    color: #1e293b;
-    border-bottom: 1px solid #e5e7eb;
-    padding-bottom: 6px;
+/* Order meta info */
+.order-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
 }
 
-/* =========================
-   Order Info
-   ========================= */
-.order-detail-box p {
+.order-meta p {
+    margin: 5px 0;
     font-size: 15px;
-    margin-bottom: 10px;
-    color: #374151;
+    color: #555;
 }
 
-.order-detail-box p strong {
-    color: #111827;
-    min-width: 70px;
-    display: inline-block;
+.order-meta span {
+    font-weight: 600;
+    color: #333;
 }
 
-/* =========================
-   Products List
-   ========================= */
-.order-detail-box ul {
+/* Section title */
+.section-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Product list */
+.product-list {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
     margin: 0;
 }
 
-.order-detail-box li {
-    padding: 12px 10px;
-    border-bottom: 1px solid #e5e7eb;
-    font-size: 15px;
+.product-item {
     display: flex;
     justify-content: space-between;
-    color: #374151;
-    transition: background-color 0.2s ease;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
 }
 
-.order-detail-box li:last-child {
-    border-bottom: none;
+.product-name {
+    font-weight: 500;
+    color: #444;
 }
 
-.order-detail-box li:hover {
-    background-color: #f1f5f9;
+.product-price {
+    font-weight: 600;
+    color: #4CAF50;
 }
 
-/* =========================
-   Responsive
-   ========================= */
-@media (max-width: 768px) {
-    .order-detail-box {
-        padding: 24px;
-        margin: 20px;
+/* Empty state */
+.empty {
+    padding: 15px;
+    text-align: center;
+    color: #888;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .order-meta {
+        flex-direction: column;
     }
 
-    .order-detail-box li {
+    .product-item {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
+        gap: 5px;
     }
 }
