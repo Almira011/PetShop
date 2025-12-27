@@ -92,7 +92,7 @@ import dj_database_url
 
 DATABASES = {
     'default': dj_database_url.parse(
-         os.getenv("DATABASE_URL")
+        "postgresql://postgres_d6g9_user:o6Oi4S8qOCEqeGw0z7faGTIMUNXwubgd@dpg-d4q2csruibrs73dedqcg-a/postgres_d6g9"
     )
 }
 # Password validation
