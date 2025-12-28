@@ -161,3 +161,90 @@ li {
         padding: 0 16px;
     }
 }
+
+
+/* =========================
+   Footer
+   ========================= */
+.site-footer {
+    background-color: #020617;
+    color: #cbd5f5;
+    margin-top: 60px;
+    padding-top: 48px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+}
+
+/* Brand section */
+.footer-brand h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.footer-brand p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #94a3b8;
+}
+
+/* Footer links */
+.footer-links h4,
+.footer-meta h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: #e5e7eb;
+}
+
+.footer-links a {
+    display: block;
+    font-size: 14px;
+    color: #94a3b8;
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #60a5fa;
+}
+
+/* Meta info */
+.footer-meta p {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-bottom: 6px;
+}
+
+/* Bottom bar */
+.footer-bottom {
+    margin-top: 40px;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 13px;
+    color: #64748b;
+    border-top: 1px solid #1e293b;
+}
+
+/* =========================
+   Footer Responsive
+   ========================= */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .footer-bottom {
+        padding: 14px 20px;
+    }
+}
