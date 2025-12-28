@@ -1,0 +1,81 @@
+/* =========================
+   Orders Container
+   ========================= */
+.order-box {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 32px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   Heading
+   ========================= */
+.order-box h2 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #0f172a;
+}
+
+/* =========================
+   Orders List
+   ========================= */
+.order-box ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.order-box li {
+    padding: 14px 12px;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #374151;
+    transition: background-color 0.2s ease;
+}
+
+.order-box li:hover {
+    background-color: #f1f5f9;
+}
+
+/* =========================
+   Order Links
+   ========================= */
+.order-box a {
+    font-size: 14px;
+    font-weight: 500;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.order-box a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   Empty State
+   ========================= */
+.order-box ul p {
+    padding: 14px 0;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 768px) {
+    .order-box {
+        padding: 24px;
+    }
+
+    .order-box li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+}
