@@ -109,3 +109,104 @@
         height: 200px;
     }
 }
+
+
+
+/* =========================
+   PET IMAGE SLIDER (CSS ONLY)
+   ========================= */
+
+.pet-slider {
+    width: 100%;
+    max-width: 1200px;
+    margin: 25px auto 40px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 14px;
+    background: #f6f7f9;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Gradient fade edges for premium look */
+.pet-slider::before,
+.pet-slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.pet-slider::before {
+    left: 0;
+    background: linear-gradient(to right, #f6f7f9, transparent);
+}
+
+.pet-slider::after {
+    right: 0;
+    background: linear-gradient(to left, #f6f7f9, transparent);
+}
+
+.pet-slider-track {
+    display: flex;
+    gap: 24px;
+    padding: 20px;
+    animation: pet-slide-scroll 30s linear infinite;
+}
+
+/* Pause on hover */
+.pet-slider:hover .pet-slider-track {
+    animation-play-state: paused;
+}
+
+.pet-slide {
+    min-width: 260px;
+    height: 180px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #ddd;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.pet-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Subtle hover lift */
+.pet-slide:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Smooth infinite scroll */
+@keyframes pet-slide-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+    .pet-slide {
+        min-width: 200px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pet-slide {
+        min-width: 160px;
+        height: 120px;
+    }
+}

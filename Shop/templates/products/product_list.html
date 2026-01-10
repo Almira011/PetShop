@@ -11,6 +11,19 @@
 <div class="product-grid">
     <h2>Available Pets</h2>
 
+    <div class="pet-slider">
+    <div class="pet-slider-track">
+        {% for product in products %}
+            {% if product.image %}
+                <div class="pet-slide">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+
     <ul>
         {% for product in products %}
         <li class="product-card">
