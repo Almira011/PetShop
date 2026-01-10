@@ -109,6 +109,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+
+<footer class="site-footer"> <div class="footer-container"> <div class="footer-brand"> <h3>PetStore</h3> <p> Your trusted place to find healthy, happy pets. We connect loving families with their perfect companions. </p> </div> <div class="footer-links"> <h4>Explore</h4> <a href="{% url 'product_list' %}">Home</a> {% if user.is_authenticated %} <a href="{% url 'customer_profile' %}">Profile</a> <a href="{% url 'my_orders' %}">My Orders</a> {% else %} <a href="{% url 'login' %}">Login</a> <a href="{% url 'signup' %}">Sign Up</a> {% endif %} </div> <div class="footer-meta"> <h4>Contact</h4> <p>Email: support@petstore.com</p> <p>Available 24/7</p> </div> </div> <div class="footer-bottom"> © {% now "Y" %} PetStore. All rights reserved. </div> </footer>
 </body>
 </html>
 
